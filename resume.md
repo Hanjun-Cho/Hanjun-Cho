@@ -1,1 +1,1 @@
-Hanjun Cho, Northeastern university CS + Design
+Hanjun Cho, Northeastern university CS + Design, class of 2027
