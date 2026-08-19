@@ -9,6 +9,7 @@ import estateAi from '../assets/description/Estate AI.md?raw'
 import vpnGateClient from '../assets/description/VPN Gate Client.md?raw'
 import winbar from '../assets/description/Winbar.md?raw'
 import chalkboardMirror from '../assets/description/Chalkboard Mirror.md?raw'
+import vpnGateImage from '../assets/description/VPNGate.png'
 
 export interface Tag {
     label: string
@@ -69,7 +70,7 @@ const experiences: TimelineEntry[] = [
 
 const descriptions: Record<string, string> = {
     'Estate AI': estateAi,
-    'VPN Gate Client': vpnGateClient,
+    'VPN Gate Client': vpnGateClient.replace('./VPNGate.png', vpnGateImage),
     'Winbar': winbar,
     'Chalkboard Mirror': chalkboardMirror,
 }
@@ -84,9 +85,15 @@ export default function Projects({ team }: { team: TeamInfo }) {
                 <Team team={team} />
                 <ExpandingTimeline experiences={experiences} onSelect={setSelectedTitle}/>
                 <div className={styles.description}>
-                    {selectedTitle && descriptions[selectedTitle] && (
-                        <ReactMarkdown>{descriptions[selectedTitle]}</ReactMarkdown>
-                    )}
+                    <div className={styles.description_container}>
+                        {selectedTitle && descriptions[selectedTitle]
+                            ? <ReactMarkdown>{descriptions[selectedTitle]}</ReactMarkdown>
+                            : 
+                                <div className={styles.empty}>
+                                    <span className={styles.empty_title}>Select a project on the left to learn more...</span>
+                                    <span className={styles.empty_desc}>Just a small introduction to the project, a picture, maybe a video and just the thought process of why I even made the project to begin with :)</span>
+                                </div>}
+                    </div>
                 </div>
             </div>
         </section>
