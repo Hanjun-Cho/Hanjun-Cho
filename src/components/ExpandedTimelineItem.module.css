@@ -3,6 +3,7 @@
     align-items: center;
     gap: 30px;
     width: max-content;
+    margin-bottom: 12px;
 }
 
 .dot {
@@ -24,6 +25,7 @@
     padding: 24px 24px 24px 24px;
     transition: transform 0.12s ease;
     cursor: pointer;
+    box-shadow: 2px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .shifted {

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown, { type Components } from 'react-markdown'
 import styles from './Projects.module.css'
 import type { Team as TeamInfo } from '../App'
 import ExpandingTimeline from '../components/ExpandingTimeline'
@@ -10,6 +10,9 @@ import vpnGateClient from '../assets/description/VPN Gate Client.md?raw'
 import winbar from '../assets/description/Winbar.md?raw'
 import chalkboardMirror from '../assets/description/Chalkboard Mirror.md?raw'
 import vpnGateImage from '../assets/description/VPNGate.png'
+import winbarVideo from '../assets/description/Winbar Demo.mp4'
+import winbarImage from '../assets/description/Winbar.png'
+import estateAiImage from '../assets/description/EstateAI.png'
 
 export interface Tag {
     label: string
@@ -27,7 +30,7 @@ const experiences: TimelineEntry[] = [
     {
         id: 0,
         title: 'Estate AI',
-        subtitle: 'Hack@Brown 2026 FetchAI Challenge Track Winner',
+        subtitle: 'AI-powered real estate investment analysis platform with automated underwriting and property-specific investment insights',
         tags: [
             { label: 'React', color: '#C1AD76' },
             { label: 'FastAPI', color: '#C1AD76' },
@@ -38,7 +41,7 @@ const experiences: TimelineEntry[] = [
     {
         id: 1,
         title: 'VPN Gate Client',
-        subtitle: 'Desktop VPN client that dynamically discovers and filters public OpenVPN relay servers',
+        subtitle: 'Windows VPN client that concurrently validates public OpenVPN relay servers and filters unavailable endpoints',
         tags: [
             { label: 'PySide6', color: '#C1AD76' },
             { label: 'Python', color: '#C1AD76' },
@@ -57,7 +60,7 @@ const experiences: TimelineEntry[] = [
     {
         id: 3,
         title: 'Chalkboard Mirror',
-        subtitle: 'Full-stack analytics platform built in React to display advanced football statistics and action maps',
+        subtitle: 'Full-stack football analytics platform for extracting, processing, and visualizing advanced match data',
         tags: [
             { label: 'React', color: '#C1AD76' },
             { label: 'FastAPI', color: '#C1AD76' },
@@ -66,13 +69,31 @@ const experiences: TimelineEntry[] = [
             { label: 'Playwright', color: '#C1AD76' },
         ],
     },
+    {
+        id: 4,
+        title: 'This Website',
+        subtitle: 'How much explaination does that need?',
+        tags: [
+            { label: 'React', color: '#C1AD76' },
+            { label: 'Figma', color: '#C1AD76' },
+        ],
+    },
 ]
 
 const descriptions: Record<string, string> = {
-    'Estate AI': estateAi,
+    'Estate AI': estateAi.replace('./EstateAI.png', estateAiImage),
     'VPN Gate Client': vpnGateClient.replace('./VPNGate.png', vpnGateImage),
-    'Winbar': winbar,
+    'Winbar': winbar
+        .replace('./Winbar.png', winbarImage)
+        .replace('./Winbar%20Demo.mp4', winbarVideo),
     'Chalkboard Mirror': chalkboardMirror,
+}
+
+const renderVideo: Components['img'] = ({ src, alt }) => {
+    if (src?.endsWith('.mp4') || src?.endsWith('.webm')) {
+        return <video src={src} controls />
+    }
+    return <img src={src} alt={alt} />
 }
 
 export default function Projects({ team }: { team: TeamInfo }) {
@@ -87,7 +108,7 @@ export default function Projects({ team }: { team: TeamInfo }) {
                 <div className={styles.description}>
                     <div className={styles.description_container}>
                         {selectedTitle && descriptions[selectedTitle]
-                            ? <ReactMarkdown>{descriptions[selectedTitle]}</ReactMarkdown>
+                            ? <ReactMarkdown components={{ img: renderVideo }}>{descriptions[selectedTitle]}</ReactMarkdown>
                             : 
                                 <div className={styles.empty}>
                                     <span className={styles.empty_title}>Select a project on the left to learn more...</span>

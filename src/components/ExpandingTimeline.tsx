@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './ExpandingTimeline.module.css'
 import ExpandedTimelineItem from './ExpandedTimelineItem'
 import type { TimelineEntry } from '../pages/Experience'
@@ -11,6 +11,23 @@ export default function ExpandingTimeline({
     onSelect: (title: string | null) => void
 }) {
     const [selected, setSelected] = useState<number | null>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        const el = containerRef.current
+        if (!el) return
+
+        const onWheel = (e: WheelEvent) => {
+            e.preventDefault()
+            if (el.scrollHeight > el.clientHeight) {
+                const max = el.scrollHeight - el.clientHeight
+                el.scrollTop = Math.min(max, Math.max(0, el.scrollTop + e.deltaY))
+            }
+        }
+
+        el.addEventListener('wheel', onWheel, { passive: false })
+        return () => el.removeEventListener('wheel', onWheel)
+    }, [])
 
     const handleSelect = (i: number, title: string) => {
         setSelected((prev) => {
@@ -21,7 +38,7 @@ export default function ExpandingTimeline({
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} ref={containerRef}>
             {experiences.map((entry, i) => (
                 <ExpandedTimelineItem
                     key={i}
