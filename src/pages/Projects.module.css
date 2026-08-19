@@ -1,0 +1,24 @@
+.description {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 560px;
+
+    border-top-left-radius: 21px;
+    border-bottom-left-radius: 21px;
+}
+
+@media (max-width: 1600px) {
+    .description {
+        left: 450px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .description {
+        display: none;
+    }
+}
+

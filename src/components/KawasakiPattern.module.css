@@ -1,0 +1,17 @@
+.kawasaki {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.kawasaki_line {
+    position: absolute;
+    top: 50%;
+    width: 1px;
+    height: 130vh;
+    background: #fff;
+    transform: translate(-50%, -50%) rotate(30deg);
+}

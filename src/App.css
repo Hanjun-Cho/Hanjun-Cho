@@ -1,0 +1,103 @@
+:root {
+    --timeline-gutter: 40px;
+}
+
+.bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.6s ease;
+}
+
+.bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-overlay);
+    opacity: 0.9;
+    transition: background-color 0.6s ease;
+}
+
+.app {
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    width: 100dvw;
+    display: grid;
+    grid-template-columns: var(--timeline-gutter, 40px) 1fr;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.app::-webkit-scrollbar {
+    display: none;
+}
+
+.screens {
+    height: auto;
+}
+
+.screen {
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    width: 100dvw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: grid;
+    place-items: center;
+}
+
+.screen:nth-child(2) .label {
+    color: #08060d;
+}
+
+.screen_main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.screen_description {
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    right: 0;
+}
+
+.screen_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.label {
+    position: relative;
+    font-size: 72px;
+    font-family: 'Quicksand Bold';
+    letter-spacing: 2px;
+    user-select: none;
+    margin-left: 108px;
+    top: 0;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+pre {
+    margin-top: 16px;
+    font-family: var(--mono, ui-monospace, Consolas, monospace);
+}
+
+pre code {
+    tab-size: 4;
+}
+
+@media (max-width: 1024px) {
+    .label {
+        font-size: 36px;
+    }
+}

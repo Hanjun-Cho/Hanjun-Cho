@@ -1,0 +1,26 @@
+.timeline {
+    position: relative;
+    height: 100%;
+}
+
+.timeline_line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 64px;
+    width: 3px;
+    background: #000;
+}
+
+@media (max-width: 1600px) {
+    .timeline_line {
+        left: 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .timeline_line {
+        left: 36px;
+    }
+}
+
