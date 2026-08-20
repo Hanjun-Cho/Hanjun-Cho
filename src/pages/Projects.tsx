@@ -9,8 +9,10 @@ import estateAi from '../assets/description/Estate AI.md?raw'
 import vpnGateClient from '../assets/description/VPN Gate Client.md?raw'
 import winbar from '../assets/description/Winbar.md?raw'
 import chalkboardMirror from '../assets/description/Chalkboard Mirror.md?raw'
+import thisWebsite from '../assets/description/This Website.md?raw'
 import vpnGateImage from '../assets/description/VPNGate.png'
 import winbarVideo from '../assets/description/Winbar Demo.mp4'
+import chalkboardVideo from '../assets/description/Chalkboard Demo.mp4'
 import winbarImage from '../assets/description/Winbar.png'
 import estateAiImage from '../assets/description/EstateAI.png'
 
@@ -86,7 +88,9 @@ const descriptions: Record<string, string> = {
     'Winbar': winbar
         .replace('./Winbar.png', winbarImage)
         .replace('./Winbar%20Demo.mp4', winbarVideo),
-    'Chalkboard Mirror': chalkboardMirror,
+    'Chalkboard Mirror': chalkboardMirror
+        .replace('./Chalkboard%20Demo.mp4', chalkboardVideo),
+    'This Website': thisWebsite,
 }
 
 const renderVideo: Components['img'] = ({ src, alt }) => {
