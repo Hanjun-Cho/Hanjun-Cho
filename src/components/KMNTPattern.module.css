@@ -1,0 +1,9 @@
+.kmtn {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    left: -40px;
+    display: block;
+    pointer-events: none;
+}

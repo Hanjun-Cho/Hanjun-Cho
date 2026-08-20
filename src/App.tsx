@@ -10,7 +10,7 @@ import frontaleBg from './assets/frontale_bg.jpg'
 import spursLogo from './assets/spurs.png'
 import spursBg from './assets/spurs_bg.jpg'
 import koreaLogo from './assets/korea.png'
-import KawasakiPattern from './components/KawasakiPattern'
+import koreaBg from './assets/korea_bg.jpg'
 
 export interface Team {
     name: string
@@ -42,7 +42,7 @@ const TEAMS: Team[] = [
         tertiaryColor: '#8F0A20',
         headerColor: '#000000',
         logo: koreaLogo,
-        bg: ''
+        bg: koreaBg
     },
     {
         name: 'KAWASAKI FRONTALE',
