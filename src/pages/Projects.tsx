@@ -28,7 +28,7 @@ export interface TimelineEntry {
     tags: Tag[]
 }
 
-const experiences: TimelineEntry[] = [
+const projects: TimelineEntry[] = [
     {
         id: 0,
         title: 'Estate AI',
@@ -108,7 +108,7 @@ export default function Projects({ team }: { team: TeamInfo }) {
             <KawasakiPattern/>
             <div className="screen_main">
                 <Team team={team} />
-                <ExpandingTimeline experiences={experiences} onSelect={setSelectedTitle}/>
+                <ExpandingTimeline experiences={projects} onSelect={setSelectedTitle}/>
                 <div className={`${styles.description} ${!selectedTitle ? styles.hidden : ''}`}>
                     <button className={styles.close} onClick={() => setSelectedTitle(null)} aria-label="Close project description">
                         &times;

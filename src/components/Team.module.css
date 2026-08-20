@@ -1,4 +1,5 @@
 .box {
+    z-index: 10;
     width: fit-content;
     height: 81px;
     color: white;
@@ -55,8 +56,8 @@
 
 @media (max-width: 1024px) {
     .box {
-        transform: scale(0.7);
-        left: -81px;
+        transform: scale(0.6);
+        left: -95px;
         top: calc(100% - 81px);
     }
 }

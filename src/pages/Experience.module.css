@@ -1,0 +1,43 @@
+.timeline {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: -40px;
+    top: 50%;
+    background-color: black;
+}
+
+.experiences {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 222px);
+    top: 50%;
+    left: -40px;
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    cursor: grab;
+    padding-right: 90px;
+}
+
+.experiences::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 1600px) {
+    .experiences {
+        height: calc(100% - 90px);
+        padding-right: 70px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .experiences {
+        height: calc(100% + 60px);
+        padding-right: 30px;
+    }
+}
+
