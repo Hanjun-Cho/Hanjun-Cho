@@ -109,7 +109,10 @@ export default function Projects({ team }: { team: TeamInfo }) {
             <div className="screen_main">
                 <Team team={team} />
                 <ExpandingTimeline experiences={experiences} onSelect={setSelectedTitle}/>
-                <div className={styles.description}>
+                <div className={`${styles.description} ${!selectedTitle ? styles.hidden : ''}`}>
+                    <button className={styles.close} onClick={() => setSelectedTitle(null)} aria-label="Close project description">
+                        &times;
+                    </button>
                     <div className={styles.description_container}>
                         {selectedTitle && descriptions[selectedTitle]
                             ? <ReactMarkdown components={{ img: renderVideo }}>{descriptions[selectedTitle]}</ReactMarkdown>

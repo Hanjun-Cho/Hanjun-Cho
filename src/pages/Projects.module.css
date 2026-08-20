@@ -90,6 +90,23 @@
     width: 50%;
 }
 
+
+.close {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: none;
+    z-index: 10;
+
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 10px;
+}
+
 @media (max-width: 1600px) {
     .description {
         width: calc(100% - 490px);
@@ -99,7 +116,30 @@
 
 @media (max-width: 1024px) {
     .description {
+        width: 100%;
+        left: -40px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .hidden {
         display: none;
+    }
+
+    .description_container {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .empty_title {
+        width: 100%; 
+    }
+
+    .empty_desc {
+        width: 100%;
+    }
+
+    .close {
+        display: block;
     }
 }
 
