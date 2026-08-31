@@ -4,10 +4,10 @@ import styles from './TottenhamPattern.module.css'
 const BLACK = '#000000'
 const WHITE = '#FFFFFF'
 const HEX_R = 10
-const FLOW_VX = -4
+const FLOW_VX = -6
 const FLOW_VY = 0
 const BASE_WIDTH = 1
-const OPACITY = 0.1
+const OPACITY = 0.05
 const TARGET_TILE = 520
 
 const COL_SPACING = HEX_R * Math.sqrt(3)

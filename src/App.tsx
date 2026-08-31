@@ -85,6 +85,12 @@ function App() {
 
     const active = TEAMS[activeIndex]
 
+    const scrollToSection = (index: number) => {
+        const container = containerRef.current
+        if (!container) return
+        container.scrollTo({ top: index * container.clientHeight, behavior: 'smooth' })
+    }
+
     return (
         <>
             <div
@@ -97,7 +103,7 @@ function App() {
             <div className="app" ref={containerRef}>
                 <Timeline color={active.secondaryColor} />
                 <main className="screens">
-                    <Home team={TEAMS[0]} />
+                    <Home team={TEAMS[0]} onNavigate={scrollToSection} />
                     <Experience team={TEAMS[1]} />
                     <Projects team={TEAMS[2]} />
                 </main>
