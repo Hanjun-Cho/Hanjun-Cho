@@ -102,6 +102,18 @@ function App() {
             />
             <div className="app" ref={containerRef}>
                 <Timeline color={active.secondaryColor} />
+                <button
+                    className="home_button"
+                    aria-label="Back to top"
+                    onClick={() => {
+                        const c = containerRef.current
+                        if (c) c.scrollTop = 0
+                    }}
+                >
+                    <svg className="home_icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3z"/>
+                    </svg>
+                </button>
                 <main className="screens">
                     <Home team={TEAMS[0]} onNavigate={scrollToSection} />
                     <Experience team={TEAMS[1]} />
