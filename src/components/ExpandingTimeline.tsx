@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './ExpandingTimeline.module.css'
 import ExpandedTimelineItem from './ExpandedTimelineItem'
-import type { TimelineEntry } from '../pages/Experience'
+import type { TimelineEntry } from '../pages/Projects'
 
 export default function ExpandingTimeline({
     experiences,

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from './ExpandedTimelineItem.module.css'
-import type { Tag } from '../pages/Experience'
+import type { Tag } from '../pages/Projects'
 
 interface ExpandedTimelineItemProps {
     title: string
