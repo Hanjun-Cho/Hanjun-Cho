@@ -18,8 +18,8 @@ const experiences: ExperienceEntry[] = [
     {
         id: 0,
         company: 'Northeastern University',
-        position: 'Incoming Teaching Assistant, CS3100',
-        thoughts: 'Havent started this one yet... ask me again in December :|',
+        position: 'Teaching Assistant, Program Design and Implementation II',
+        thoughts: '',
         location: 'Boston, Massachusetts',
         duration: 'Sep 2026 - Dec 2026'
     },
