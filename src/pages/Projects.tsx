@@ -9,12 +9,14 @@ import estateAi from '../assets/description/Estate AI.md?raw'
 import vpnGateClient from '../assets/description/VPN Gate Client.md?raw'
 import winbar from '../assets/description/Winbar.md?raw'
 import chalkboardMirror from '../assets/description/Chalkboard Mirror.md?raw'
+import pitchDraw from '../assets/description/PitchDraw.md?raw'
 import thisWebsite from '../assets/description/This Website.md?raw'
 import vpnGateImage from '../assets/description/VPNGate.png'
 import winbarVideo from '../assets/description/Winbar Demo.mp4'
 import chalkboardVideo from '../assets/description/Chalkboard Demo.mp4'
 import winbarImage from '../assets/description/Winbar.png'
 import estateAiImage from '../assets/description/EstateAI.png'
+import pitchDrawImage from '../assets/description/PitchDraw.png'
 
 export interface Tag {
     label: string
@@ -31,6 +33,17 @@ export interface TimelineEntry {
 const projects: TimelineEntry[] = [
     {
         id: 0,
+        title: 'PitchDraw',
+        subtitle: 'Video analysis tool enabling timestamped bookmarking, annotations, and interactive tactical analysis directly alongside match footage',
+        tags: [
+            { label: 'C++', color: '#C1AD76'},
+            { label: 'OpenGL', color: '#C1AD76'},
+            { label: 'ImGui', color: '#C1AD76'},
+            { label: 'ImGui', color: '#C1AD76'},
+        ],
+    },
+    {
+        id: 1,
         title: 'Estate AI',
         subtitle: 'AI-powered real estate investment analysis platform with automated underwriting and property-specific investment insights',
         tags: [
@@ -41,7 +54,7 @@ const projects: TimelineEntry[] = [
         ],
     },
     {
-        id: 1,
+        id: 2,
         title: 'VPN Gate Client',
         subtitle: 'Windows VPN client that concurrently validates public OpenVPN relay servers and filters unavailable endpoints',
         tags: [
@@ -51,7 +64,7 @@ const projects: TimelineEntry[] = [
         ],
     },
     {
-        id: 2,
+        id: 3,
         title: 'Winbar',
         subtitle: 'Extensible, module-based utility bar for Windows',
         tags: [
@@ -60,7 +73,7 @@ const projects: TimelineEntry[] = [
         ],
     },
     {
-        id: 3,
+        id: 4,
         title: 'Chalkboard Mirror',
         subtitle: 'Full-stack football analytics platform for extracting, processing, and visualizing advanced match data',
         tags: [
@@ -72,7 +85,7 @@ const projects: TimelineEntry[] = [
         ],
     },
     {
-        id: 4,
+        id: 5,
         title: 'This Website',
         subtitle: 'How much explaination does that need?',
         tags: [
@@ -83,6 +96,7 @@ const projects: TimelineEntry[] = [
 ]
 
 const descriptions: Record<string, string> = {
+    'PitchDraw': pitchDraw.replace('./PitchDraw.png', pitchDrawImage),
     'Estate AI': estateAi.replace('./EstateAI.png', estateAiImage),
     'VPN Gate Client': vpnGateClient.replace('./VPNGate.png', vpnGateImage),
     'Winbar': winbar
